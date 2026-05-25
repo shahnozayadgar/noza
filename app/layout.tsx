@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -30,12 +29,11 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col bg-white text-neutral-900">
+      <body className="flex min-h-full flex-col bg-white text-neutral-900 lg:flex-row">
         <Header />
-        <main className="mx-auto w-full max-w-5xl flex-1 px-6 py-12">
+        <main className="w-full max-w-3xl flex-1 px-6 py-12 lg:px-12 lg:py-16">
           {children}
         </main>
-        <Footer />
         <Analytics />
       </body>
     </html>
