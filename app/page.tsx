@@ -1,6 +1,7 @@
 import Image from "next/image";
 import FadeIn from "@/components/motion/FadeIn";
 import { publications } from "@/content/publications";
+import { withBasePath } from "@/lib/basePath";
 
 const AUTHOR_NAME = "Shakhnozakhon Yadgarova";
 
@@ -74,7 +75,7 @@ export default function HomePage() {
                    shrink-0 overflow-hidden rounded-md bg-white">
                     {p.image && (
                       <Image
-                        src={p.image}
+                        src={withBasePath(p.image)}
                         alt={p.title}
                         fill
                         sizes="96px"

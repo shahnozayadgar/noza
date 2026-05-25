@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import Contacts from "@/components/Contacts";
+import { withBasePath } from "@/lib/basePath";
 
 export default function Header() {
 
@@ -12,7 +13,7 @@ export default function Header() {
         <div className="space-y-4">
           <div className="hidden w-full overflow-hidden rounded-md bg-white lg:block lg:h-72">
             <Image
-              src="/images/profile/profile.jpeg"
+              src={withBasePath("/images/profile/profile.jpeg")}
               alt="Shahnoza Yadgarova"
               width={320}
               height={320}
