@@ -15,13 +15,48 @@ export default function HomePage() {
             leverage technology to ensure equal education opportunities for all.
           </p>
           <p className="text-sm leading-relaxed text-neutral-900">
-            Currently, I work as a Software Engineerat <span className="font-semibold text-blue-900">NEOALI</span>, building products
+            Currently, I work as a Software Engineer at{" "}
+            <a
+              href="https://neoali.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-blue-900 hover:underline underline-offset-2"
+            >
+              NEOALI
+            </a>
+            , building products
             that harness open-source AI models to deliver enterprise-grade performance
             with efficient resource consumption.
           </p>
           <p className="text-sm leading-relaxed text-neutral-900">
-            I completed my B.Sc. in <span className="font-semibold text-blue-900">Computer Science</span> at <span className="font-semibold text-blue-900">KAIST</span>, where I collaborated
-            with Prof. <span className="font-semibold text-blue-900">Juho Kim</span> on human-computer interaction research.
+            I completed my B.Sc. in{" "}
+            <a
+              href="https://cs.kaist.ac.kr/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-blue-900 hover:underline underline-offset-2"
+            >
+              Computer Science
+            </a>{" "}
+            at{" "}
+            <a
+              href="https://kaist.ac.kr/en/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-blue-900 hover:underline underline-offset-2"
+            >
+              KAIST
+            </a>
+            , where I collaborated with Prof.{" "}
+            <a
+              href="https://juhokim.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-blue-900 hover:underline underline-offset-2"
+            >
+              Juho Kim
+            </a>{" "}
+            on human-computer interaction research.
           </p>
         </section>
 
