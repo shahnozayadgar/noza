@@ -1,5 +1,6 @@
 import { Mail, GraduationCap } from "lucide-react";
 import FadeIn from "@/components/motion/FadeIn";
+import { publications } from "@/content/publications";
 
 type IconProps = { className?: string };
 
@@ -20,54 +21,80 @@ function LinkedInIcon({ className }: IconProps) {
 }
 
 const contacts = [
-  {
-    label: "Email",
-    href: "mailto:dzhuraevmunir@gmail.com",
-    icon: Mail,
-  },
+  { label: "Email", href: "mailto:dzhuraevmunir@gmail.com", icon: Mail },
   {
     label: "Google Scholar",
     href: "https://scholar.google.com/",
     icon: GraduationCap,
   },
-  {
-    label: "Twitter",
-    href: "https://twitter.com/",
-    icon: XIcon,
-  },
-  {
-    label: "LinkedIn",
-    href: "https://www.linkedin.com/",
-    icon: LinkedInIcon,
-  },
+  { label: "Twitter", href: "https://twitter.com/", icon: XIcon },
+  { label: "LinkedIn", href: "https://www.linkedin.com/", icon: LinkedInIcon },
 ];
 
 export default function HomePage() {
   return (
     <FadeIn>
-      <section className="max-w-2xl space-y-6">
-        <h1 className="text-4xl font-semibold tracking-tight">
-          Shahnoza Yadgar
-        </h1>
-        <h2 className="text-lg text-neutral-600">
-          Short tagline goes here — what you do, where you are.
-        </h2>
-        <ul className="flex flex-wrap gap-x-5 gap-y-3 pt-2">
-          {contacts.map(({ label, href, icon: Icon }) => (
-            <li key={label}>
-              <a
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm text-neutral-700 transition-colors hover:text-neutral-900"
-              >
-                <Icon className="h-4 w-4" />
-                {label}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </section>
+      <div className="max-w-2xl space-y-20">
+        <section id="about" className="scroll-mt-16 space-y-6">
+          <h1 className="text-4xl font-semibold tracking-tight">
+            Shahnoza Yadgar
+          </h1>
+          <h2 className="text-lg text-neutral-600">
+            Short tagline goes here — what you do, where you are.
+          </h2>
+          <ul className="flex flex-wrap gap-x-5 gap-y-3 pt-2">
+            {contacts.map(({ label, href, icon: Icon }) => (
+              <li key={label}>
+                <a
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm text-neutral-700 transition-colors hover:text-neutral-900"
+                >
+                  <Icon className="h-4 w-4" />
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section id="publications" className="scroll-mt-16 space-y-6">
+          <h2 className="text-2xl font-semibold tracking-tight">
+            Publications
+          </h2>
+          {publications.length === 0 ? (
+            <p className="text-neutral-500">No publications yet.</p>
+          ) : (
+            <ul className="space-y-6">
+              {publications.map((p) => (
+                <li key={p.slug} className="space-y-1">
+                  <h3 className="text-lg font-medium">{p.title}</h3>
+                  <p className="text-sm text-neutral-600">
+                    {p.authors.join(", ")} · {p.venue}, {p.year}
+                  </p>
+                  {p.links && p.links.length > 0 && (
+                    <ul className="flex flex-wrap gap-3 text-sm">
+                      {p.links.map((link) => (
+                        <li key={link.href}>
+                          <a
+                            href={link.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-neutral-700 underline underline-offset-4 hover:text-neutral-900"
+                          >
+                            {link.label}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </li>
+              ))}
+            </ul>
+          )}
+        </section>
+      </div>
     </FadeIn>
   );
 }

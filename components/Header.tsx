@@ -6,17 +6,13 @@ import { User } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const nav = [
-  { href: "/about", label: "About" },
-  { href: "/publications", label: "Publications" },
+  { href: "/#about", label: "About" },
+  { href: "/#publications", label: "Publications" },
   { href: "/projects", label: "Projects" },
   { href: "/cv.pdf", label: "CV", external: true },
 ];
 
-const socials = [
-  { href: "https://www.linkedin.com/", label: "LinkedIn" },
-  { href: "https://github.com/shahnozayadgar", label: "GitHub" },
-  { href: "mailto:dzhuraevmunir@gmail.com", label: "Email" },
-];
+
 
 export default function Header() {
   const pathname = usePathname();
@@ -42,6 +38,7 @@ export default function Header() {
           {nav.map((item) => {
             const active =
               !item.external &&
+              !item.href.includes("#") &&
               (pathname === item.href ||
                 (item.href !== "/" && pathname.startsWith(item.href)));
             const className = cn(
@@ -69,20 +66,7 @@ export default function Header() {
         </nav>
 
         <div className="hidden flex-col gap-3 text-xs text-neutral-500 lg:flex">
-          <div className="flex flex-wrap gap-x-4 gap-y-1">
-            {socials.map((s) => (
-              <a
-                key={s.href}
-                href={s.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-neutral-700 hover:text-neutral-900"
-              >
-                {s.label}
-              </a>
-            ))}
-          </div>
-          <p>© {new Date().getFullYear()} Shahnoza Yadgar</p>
+          <p>© {new Date().getFullYear()} Shahnoza Yadgarova</p>
         </div>
       </div>
     </aside>
