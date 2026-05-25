@@ -1,5 +1,7 @@
 import type { NextConfig } from "next";
 
+const isProd = process.env.NODE_ENV === 'production';
+
 const nextConfig: NextConfig = {
   output: "export",
   images: {
@@ -7,10 +9,9 @@ const nextConfig: NextConfig = {
   },
   // Disable trailing slash to avoid issues with GitHub Pages
   trailingSlash: false,
-  // Only needed if your repo name is not your username.github.io
-  // For example, if your repo is "username.github.io/portfolio"
-  // basePath: "/portfolio",
-  // assetPrefix: "/portfolio",
+  // Configure base path for GitHub Pages subdirectory
+  basePath: isProd ? "/noza" : "",
+  assetPrefix: isProd ? "/noza" : "",
 };
 
 export default nextConfig;
