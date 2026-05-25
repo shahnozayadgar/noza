@@ -55,8 +55,9 @@ export default function Header() {
           })}
         </nav> */}
 
-        <div className="hidden flex-col gap-3 text-xs text-neutral-500 lg:flex">
+        <div className="hidden flex-col gap-1 text-xs text-neutral-500 lg:flex">
           <p>© {new Date().getFullYear()} Shahnoza Yadgarova</p>
+          <p>Last edited May 25, 2026</p>
         </div>
       </div>
     </aside>

@@ -30,7 +30,8 @@ export default function HomePage() {
             <ul className="space-y-16">
               {publications.map((p) => (
                 <li key={p.slug} className="flex gap-8">
-                  <div className="relative h-24 w-40 shrink-0 overflow-hidden rounded-md bg-neutral-100">
+                  <div className="relative h-35 w-45
+                   shrink-0 overflow-hidden rounded-md bg-neutral-100">
                     {p.image && (
                       <Image
                         src={p.image}
