@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { User } from "lucide-react";
+import Image from "next/image";
 import Contacts from "@/components/Contacts";
 
 export default function Header() {
@@ -10,8 +10,15 @@ export default function Header() {
     <aside className="w-full shrink-0 border-b border-neutral-200 lg:sticky lg:top-0 lg:h-screen lg:w-80 lg:border-b-0">
       <div className="flex h-full flex-col justify-between gap-8 p-8">
         <div className="space-y-4">
-          <div className="hidden aspect-square w-full items-center justify-center overflow-hidden rounded-md bg-neutral-100 lg:flex">
-            <User className="h-16 w-16 text-neutral-400" strokeWidth={1.25} />
+          <div className="hidden w-full overflow-hidden rounded-md bg-white lg:block lg:h-72">
+            <Image
+              src="/images/profile/profile.jpeg"
+              alt="Shahnoza Yadgarova"
+              width={320}
+              height={320}
+              className="h-full w-full object-cover"
+              priority
+            />
           </div>
           <Link href="/" className="block">
             <h1 className="text-xl font-semibold tracking-tight">
