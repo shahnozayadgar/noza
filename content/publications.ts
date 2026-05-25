@@ -60,7 +60,7 @@ export const publications: Publication[] = [
       "Tek-Jin Nam",
     ],
     image: "/images/publications/areca.png",
-    award: "Best Paper Honorable Mention Award (Top 5% of submissions)",
+    award: "Best Paper Honorable Mention Award (5%)",
     links: [
       { label: "Paper", href: "#" },
     ],

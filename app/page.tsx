@@ -31,14 +31,14 @@ export default function HomePage() {
               {publications.map((p) => (
                 <li key={p.slug} className="flex gap-8">
                   <div className="relative h-35 w-45
-                   shrink-0 overflow-hidden rounded-md bg-neutral-100">
+                   shrink-0 overflow-hidden rounded-md bg-white">
                     {p.image && (
                       <Image
                         src={p.image}
                         alt={p.title}
                         fill
                         sizes="96px"
-                        className="object-cover"
+                        className="object-contain"
                       />
                     )}
                   </div>
