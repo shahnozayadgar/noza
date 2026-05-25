@@ -25,6 +25,11 @@ export const publications: Publication[] = [
       "Juho Kim",
     ],
     image: "/images/publications/plantogether.png",
+    links: [
+      { label: "Paper", href: "#" },
+      { label: "Video", href: "#" },
+      { label: "Webpage", href: "#" },
+    ],
   },
   {
     slug: "aineedsplanner",
@@ -34,5 +39,10 @@ export const publications: Publication[] = [
     year: 2024,
     authors: ["Dae Hyun Kim", "Hyungyu Shin", "Shakhnozakhon Yadgarova", "Jinho Son", "Hariharan Subramonyam", "Juho Kim"],
     image: "/images/publications/aineedsplanner.png",
+    links: [
+      { label: "Paper", href: "#" },
+      { label: "Video", href: "#" },
+      { label: "Webpage", href: "#" },
+    ],
   },
 ];

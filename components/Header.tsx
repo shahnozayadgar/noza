@@ -1,26 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { User } from "lucide-react";
-import { cn } from "@/lib/utils";
-
-const nav = [
-  { href: "/#about", label: "About" },
-  { href: "/#publications", label: "Publications" },
-  { href: "/projects", label: "Projects" },
-  { href: "/cv.pdf", label: "CV", external: true },
-];
-
-
+import Contacts from "@/components/Contacts";
 
 export default function Header() {
-  const pathname = usePathname();
 
   return (
     <aside className="w-full shrink-0 border-b border-neutral-200 lg:sticky lg:top-0 lg:h-screen lg:w-80 lg:border-b-0">
       <div className="flex h-full flex-col justify-between gap-8 p-8">
-        <div className="space-y-6">
+        <div className="space-y-4">
           <div className="hidden aspect-square w-full items-center justify-center overflow-hidden rounded-md bg-neutral-100 lg:flex">
             <User className="h-16 w-16 text-neutral-400" strokeWidth={1.25} />
           </div>
@@ -28,13 +17,14 @@ export default function Header() {
             <h1 className="text-xl font-semibold tracking-tight">
               Shahnoza Yadgarova
             </h1>
-            <h2 className="text-sm font-normal text-neutral-500 pt-2">
+            <h2 className="pt-1 text-sm font-normal text-neutral-500">
               HCI Researcher & Software Engineer
             </h2>
           </Link>
+          <Contacts vertical className="pt-2" />
         </div>
 
-        <nav className="flex flex-row flex-wrap gap-x-5 gap-y-2 lg:flex-col lg:gap-3">
+        {/* <nav className="flex flex-row flex-wrap gap-x-5 gap-y-2 lg:flex-col lg:gap-3">
           {nav.map((item) => {
             const active =
               !item.external &&
@@ -63,7 +53,7 @@ export default function Header() {
               </Link>
             );
           })}
-        </nav>
+        </nav> */}
 
         <div className="hidden flex-col gap-3 text-xs text-neutral-500 lg:flex">
           <p>© {new Date().getFullYear()} Shahnoza Yadgarova</p>
