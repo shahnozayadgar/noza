@@ -7,27 +7,27 @@ const AUTHOR_NAME = "Shakhnozakhon Yadgarova";
 export default function HomePage() {
   return (
     <FadeIn>
-      <div className="max-w-2xl space-y-20">
+      <div className="max-w-2xl space-y-39">
         <section id="about" className="scroll-mt-16 space-y-6">
-          <p className="text-base leading-relaxed text-neutral-900">
+          <p className="text-sm leading-relaxed text-neutral-900">
             I&apos;m a software engineer at NEOALI and a creative technologist
             exploring new interactions and observing human sense-making in
             human–AI interaction.
           </p>
-          <p className="text-base leading-relaxed text-neutral-900">
+          <p className="text-sm leading-relaxed text-neutral-900">
             I previously studied at KAIST School of Computing, where I worked
             as an HCI researcher with Prof. Juho Kim.
           </p>
         </section>
 
-        <section id="publications" className="scroll-mt-16 space-y-6">
+        <section id="publications" className="scroll-mt-16 space-y-8">
           <h2 className="text-l font-semibold tracking-tight">
             Publications
           </h2>
           {publications.length === 0 ? (
             <p className="text-neutral-500">No publications yet.</p>
           ) : (
-            <ul className="space-y-8">
+            <ul className="space-y-16">
               {publications.map((p) => (
                 <li key={p.slug} className="flex gap-8">
                   <div className="relative h-24 w-40 shrink-0 overflow-hidden rounded-md bg-neutral-100">
@@ -41,14 +41,14 @@ export default function HomePage() {
                       />
                     )}
                   </div>
-                  <div className="min-w-0 flex-1 space-y-1">
-                    <p className="text-sm text-neutral-600">
+                  <div className="min-w-0 flex-1 space-y-2">
+                    <p className="text-xs text-neutral-600">
                       {p.venue}, {p.year}
                     </p>
                     <h3 className="text-sm font-medium text-neutral-900">
                       {p.title}
                     </h3>
-                    <p className="text-sm text-neutral-500">
+                    <p className="text-xs text-neutral-500">
                       {p.authors.map((author, i) => (
                         <span key={author}>
                           {author === AUTHOR_NAME ? (
