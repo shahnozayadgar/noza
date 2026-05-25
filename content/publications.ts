@@ -27,9 +27,9 @@ export const publications: Publication[] = [
     ],
     image: "/images/publications/plantogether.png",
     links: [
-      { label: "Paper", href: "#" },
-      { label: "Video", href: "#" },
-      { label: "Webpage", href: "#" },
+      { label: "Paper", href: "https://dl.acm.org/doi/full/10.1145/3706598.3714044" },
+      { label: "Video", href: "https://dhkim16.github.io/plan-together/mp4/video.mp4" },
+      { label: "Webpage", href: "https://plantogether.kixlab.org/" },
     ],
   },
   {
@@ -41,9 +41,8 @@ export const publications: Publication[] = [
     authors: ["Dae Hyun Kim", "Hyungyu Shin", "Shakhnozakhon Yadgarova", "Jinho Son", "Hariharan Subramonyam", "Juho Kim"],
     image: "/images/publications/aineedsplanner.png",
     links: [
-      { label: "Paper", href: "#" },
-      { label: "Video", href: "#" },
-      { label: "Webpage", href: "#" },
+      { label: "Paper", href: "https://dl.acm.org/doi/abs/10.1145/3643834.3661577" },
+      { label: "Video", href: "https://dhkim16.github.io/ai-needs-planner/mp4/preview.mp4" },
     ],
   },
   {
@@ -62,7 +61,8 @@ export const publications: Publication[] = [
     image: "/images/publications/areca.png",
     award: "Best Paper Honorable Mention Award (5%)",
     links: [
-      { label: "Paper", href: "#" },
+      { label: "Paper", href: "https://dl.acm.org/doi/abs/10.1145/3563657.3596002" },
+      { label: "Video", href: "https://www.youtube.com/watch?v=7ZBoIbG43ys" },
     ],
   },
 ];
