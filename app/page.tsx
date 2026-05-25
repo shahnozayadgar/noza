@@ -36,13 +36,16 @@ export default function HomePage() {
     <FadeIn>
       <div className="max-w-2xl space-y-20">
         <section id="about" className="scroll-mt-16 space-y-6">
-          <h1 className="text-4xl font-semibold tracking-tight">
-            Shahnoza Yadgar
-          </h1>
-          <h2 className="text-lg text-neutral-600">
-            Short tagline goes here — what you do, where you are.
-          </h2>
-          <ul className="flex flex-wrap gap-x-5 gap-y-3 pt-2">
+          <p className="text-md leading-relaxed text-neutral-900">
+            I&apos;m a software engineer at NEOALI and a creative technologist
+            exploring new interactions and observing human sense-making in
+            human–AI interaction.
+          </p>
+          <p className="text-md leading-relaxed text-neutral-900">
+            I previously studied at KAIST School of Computing, where I worked
+            as an HCI researcher with Prof. Juho Kim.
+          </p>
+          <ul className="flex flex-wrap gap-x-5 gap-y-3 pt-22">
             {contacts.map(({ label, href, icon: Icon }) => (
               <li key={label}>
                 <a
