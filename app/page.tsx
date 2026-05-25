@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Mail, GraduationCap } from "lucide-react";
 import FadeIn from "@/components/motion/FadeIn";
 import { publications } from "@/content/publications";
@@ -20,6 +21,8 @@ function LinkedInIcon({ className }: IconProps) {
   );
 }
 
+const AUTHOR_NAME = "Shakhnozakhon Yadgarova";
+
 const contacts = [
   { label: "Email", href: "mailto:dzhuraevmunir@gmail.com", icon: Mail },
   {
@@ -36,12 +39,12 @@ export default function HomePage() {
     <FadeIn>
       <div className="max-w-2xl space-y-20">
         <section id="about" className="scroll-mt-16 space-y-6">
-          <p className="text-md leading-relaxed text-neutral-900">
+          <p className="text-base leading-relaxed text-neutral-900">
             I&apos;m a software engineer at NEOALI and a creative technologist
             exploring new interactions and observing human sense-making in
             human–AI interaction.
           </p>
-          <p className="text-md leading-relaxed text-neutral-900">
+          <p className="text-base leading-relaxed text-neutral-900">
             I previously studied at KAIST School of Computing, where I worked
             as an HCI researcher with Prof. Juho Kim.
           </p>
@@ -63,35 +66,64 @@ export default function HomePage() {
         </section>
 
         <section id="publications" className="scroll-mt-16 space-y-6">
-          <h2 className="text-2xl font-semibold tracking-tight">
+          <h2 className="text-l font-semibold tracking-tight">
             Publications
           </h2>
           {publications.length === 0 ? (
             <p className="text-neutral-500">No publications yet.</p>
           ) : (
-            <ul className="space-y-6">
+            <ul className="space-y-8">
               {publications.map((p) => (
-                <li key={p.slug} className="space-y-1">
-                  <h3 className="text-lg font-medium">{p.title}</h3>
-                  <p className="text-sm text-neutral-600">
-                    {p.authors.join(", ")} · {p.venue}, {p.year}
-                  </p>
-                  {p.links && p.links.length > 0 && (
-                    <ul className="flex flex-wrap gap-3 text-sm">
-                      {p.links.map((link) => (
-                        <li key={link.href}>
-                          <a
-                            href={link.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-neutral-700 underline underline-offset-4 hover:text-neutral-900"
-                          >
-                            {link.label}
-                          </a>
-                        </li>
+                <li key={p.slug} className="flex gap-8">
+                  <div className="relative h-24 w-40 shrink-0 overflow-hidden rounded-md bg-neutral-100">
+                    {p.image && (
+                      <Image
+                        src={p.image}
+                        alt={p.title}
+                        fill
+                        sizes="96px"
+                        className="object-cover"
+                      />
+                    )}
+                  </div>
+                  <div className="min-w-0 flex-1 space-y-1">
+                    <p className="text-sm text-neutral-600">
+                      {p.venue}, {p.year}
+                    </p>
+                    <h3 className="text-sm font-medium text-neutral-900">
+                      {p.title}
+                    </h3>
+                    <p className="text-sm text-neutral-500">
+                      {p.authors.map((author, i) => (
+                        <span key={author}>
+                          {author === AUTHOR_NAME ? (
+                            <strong className="font-medium text-neutral-900">
+                              {author}
+                            </strong>
+                          ) : (
+                            author
+                          )}
+                          {i < p.authors.length - 1 ? ", " : ""}
+                        </span>
                       ))}
-                    </ul>
-                  )}
+                    </p>
+                    {p.links && p.links.length > 0 && (
+                      <ul className="flex flex-wrap gap-3 pt-1 text-sm">
+                        {p.links.map((link) => (
+                          <li key={link.href}>
+                            <a
+                              href={link.href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-neutral-700 underline underline-offset-4 hover:text-neutral-900"
+                            >
+                              {link.label}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
                 </li>
               ))}
             </ul>
