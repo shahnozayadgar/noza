@@ -46,6 +46,11 @@ export default function HomePage() {
                     <p className="text-xs text-neutral-600">
                       {p.venue}, {p.year}
                     </p>
+                    {p.award && (
+                      <p className="text-xs font-medium text-amber-600">
+                        🏅 {p.award}
+                      </p>
+                    )}
                     <h3 className="text-sm font-medium text-neutral-900">
                       {p.title}
                     </h3>

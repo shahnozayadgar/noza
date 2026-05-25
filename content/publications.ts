@@ -6,6 +6,7 @@ export type Publication = {
   authors: string[];
   image?: string;
   links?: { label: string; href: string }[];
+  award?: string;
 };
 
 export const publications: Publication[] = [
@@ -43,6 +44,25 @@ export const publications: Publication[] = [
       { label: "Paper", href: "#" },
       { label: "Video", href: "#" },
       { label: "Webpage", href: "#" },
+    ],
+  },
+  {
+    slug: "areca",
+    title: "Areca: A Design Speculation on Everyday Products Having Minds",
+    venue: "DIS",
+    year: 2023,
+    authors: [
+      "Hyungjun Cho",
+      "Jiyeon Lee",
+      "Bonhee Ku",
+      "Yunwoo Jeong",
+      "Shakhnozakhon Yadgarova",
+      "Tek-Jin Nam",
+    ],
+    image: "/images/publications/areca.png",
+    award: "Best Paper Honorable Mention Award (Top 5% of submissions)",
+    links: [
+      { label: "Paper", href: "#" },
     ],
   },
 ];
