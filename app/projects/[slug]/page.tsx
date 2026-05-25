@@ -1,18 +1,24 @@
 import { notFound } from "next/navigation";
 import FadeIn from "@/components/motion/FadeIn";
-import { getAllProjects, getProject } from "@/lib/projects";
+import { projects } from "@/content/projects";
 
 export function generateStaticParams() {
-  return getAllProjects().map((p) => ({ slug: p.slug }));
+  // Return empty array if no projects exist yet
+  if (projects.length === 0) {
+    return [];
+  }
+
+  return projects.map((project) => ({
+    slug: project.slug,
+  }));
 }
 
-export default async function ProjectPage({
+export default function ProjectPage({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: { slug: string };
 }) {
-  const { slug } = await params;
-  const project = getProject(slug);
+  const project = projects.find((p) => p.slug === params.slug);
   if (!project) notFound();
 
   return (
