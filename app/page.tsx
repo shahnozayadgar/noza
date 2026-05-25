@@ -7,16 +7,21 @@ const AUTHOR_NAME = "Shakhnozakhon Yadgarova";
 export default function HomePage() {
   return (
     <FadeIn>
-      <div className="max-w-2xl space-y-48">
+      <div className="max-w-2xl space-y-31">
         <section id="about" className="scroll-mt-16 space-y-6">
           <p className="text-sm leading-relaxed text-neutral-900">
-            I&apos;m a software engineer at NEOALI and a creative technologist
-            exploring new interactions and observing human sense-making in
-            human–AI interaction.
+            I&apos;m a creative technologist exploring how humans interact with
+            technology to unveil new forms of interaction. My mission is to
+            leverage technology to ensure equal education opportunities for all.
           </p>
           <p className="text-sm leading-relaxed text-neutral-900">
-            I previously studied at KAIST School of Computing, where I worked
-            as an HCI researcher with Prof. Juho Kim.
+            Currently, I work as a Software Engineer at NEOALI, building products
+            that harness open-source AI models to deliver enterprise-grade performance
+            with efficient resource consumption.
+          </p>
+          <p className="text-sm leading-relaxed text-neutral-900">
+            I completed my B.Sc. in Computer Science at KAIST, where I collaborated
+            with Prof. Juho Kim on human-computer interaction research.
           </p>
         </section>
 
