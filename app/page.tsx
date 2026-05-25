@@ -7,7 +7,7 @@ const AUTHOR_NAME = "Shakhnozakhon Yadgarova";
 export default function HomePage() {
   return (
     <FadeIn>
-      <div className="max-w-2xl space-y-39">
+      <div className="max-w-2xl space-y-48">
         <section id="about" className="scroll-mt-16 space-y-6">
           <p className="text-sm leading-relaxed text-neutral-900">
             I&apos;m a software engineer at NEOALI and a creative technologist
