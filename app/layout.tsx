@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Shahnoza Yadgar",
-  description: "Personal site of Shahnoza Yadgar.",
+  title: "Shahnoza Yadgarova",
+  description: "Personal site of Shahnoza Yadgarova.",
 };
 
 export default function RootLayout({
@@ -29,9 +29,9 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col bg-white text-neutral-900 lg:flex-row">
+      <body className="flex min-h-full flex-col bg-white px-6 text-neutral-900 lg:flex-row lg:px-16">
         <Header />
-        <main className="w-full max-w-3xl flex-1 px-6 py-12 lg:px-12 lg:py-16">
+        <main className="w-full max-w-3xl flex-1 py-12 lg:py-16 lg:pl-12">
           {children}
         </main>
         <Analytics />
