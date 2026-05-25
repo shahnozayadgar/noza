@@ -79,6 +79,7 @@ export default function HomePage() {
                         fill
                         sizes="96px"
                         className="object-contain"
+                        unoptimized
                       />
                     )}
                   </div>

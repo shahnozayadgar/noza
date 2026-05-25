@@ -18,6 +18,7 @@ export default function Header() {
               height={320}
               className="h-full w-full object-cover"
               priority
+              unoptimized
             />
           </div>
           <Link href="/" className="block">
