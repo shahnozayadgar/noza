@@ -20,14 +20,18 @@ function LinkedInIcon({ className }: IconProps) {
 }
 
 export const contacts = [
-  { label: "Email", href: "mailto:dzhuraevmunir@gmail.com", icon: Mail },
+  {
+    label: "shahnozakhonyadgarova@gmail.com",
+    href: "mailto:shahnozakhonyadgarova@gmail.com",
+    icon: Mail,
+  },
   {
     label: "Google Scholar",
-    href: "https://scholar.google.com/",
+    href: "https://scholar.google.com/citations?user=BgStEPgAAAAJ&hl=en",
     icon: GraduationCap,
   },
-  { label: "Twitter", href: "https://twitter.com/", icon: XIcon },
-  { label: "LinkedIn", href: "https://www.linkedin.com/", icon: LinkedInIcon },
+  { label: "Twitter", href: "https://x.com/shahnozayadgar", icon: XIcon },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/shahnoza-yadgarova-bbbb1923b/", icon: LinkedInIcon },
 ];
 
 export default function Contacts({
