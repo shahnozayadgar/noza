@@ -69,24 +69,23 @@ export default function HomePage() {
             <p className="text-neutral-500">No publications yet.</p>
           ) : (
             <ul className="space-y-16">
-              {publications.map((p) => (
+              {publications.map((p) => {
+                const links = [
+                  ...(p.links ?? []),
+                  ...(p.video && !p.links?.some((l) => l.label === "Video")
+                    ? [{ label: "Video", href: withBasePath(p.video) }]
+                    : []),
+                ];
+                return (
                 <li key={p.slug} className="flex gap-8">
                   <div className="relative h-35 w-45
                    shrink-0 overflow-hidden rounded-md bg-white">
-                    {p.video ? (
-                      <video
-                        src={withBasePath(p.video)}
-                        controls
-                        muted
-                        className="h-full w-full object-contain"
-                        poster={p.image ? withBasePath(p.image) : undefined}
-                      />
-                    ) : p.image ? (
+                    {p.image ? (
                       <Image
                         src={withBasePath(p.image)}
                         alt={p.title}
                         fill
-                        sizes="96px"
+                        sizes="180px"
                         className="object-contain"
                         unoptimized
                       />
@@ -118,9 +117,9 @@ export default function HomePage() {
                         </span>
                       ))}
                     </p>
-                    {p.links && p.links.length > 0 && (
+                    {links.length > 0 && (
                       <ul className="flex flex-wrap gap-x-4 gap-y-1 pt-1 text-xs">
-                        {p.links.map((link) => (
+                        {links.map((link) => (
                           <li key={link.label}>
                             <a
                               href={link.href}
@@ -136,7 +135,8 @@ export default function HomePage() {
                     )}
                   </div>
                 </li>
-              ))}
+                );
+              })}
             </ul>
           )}
         </section>
