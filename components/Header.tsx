@@ -11,7 +11,7 @@ export default function Header() {
     <aside className="w-full shrink-0 border-b border-neutral-200 lg:sticky lg:top-0 lg:h-screen lg:w-80 lg:border-b-0">
       <div className="flex h-full flex-col justify-between gap-8 p-8">
         <div className="space-y-4">
-          <div className="hidden w-full overflow-hidden rounded-md bg-white lg:block lg:h-72">
+          <div className="h-32 w-32 overflow-hidden rounded-md bg-white lg:h-72 lg:w-full">
             <Image
               src={withBasePath("/images/profile/profile.jpeg")}
               alt="Shahnoza Yadgarova"

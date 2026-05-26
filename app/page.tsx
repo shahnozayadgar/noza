@@ -8,7 +8,7 @@ const AUTHOR_NAME = "Shakhnozakhon Yadgarova";
 export default function HomePage() {
   return (
     <FadeIn>
-      <div className="max-w-2xl space-y-31">
+      <div className="max-w-2xl space-y-16 lg:space-y-31">
         <section id="about" className="scroll-mt-16 space-y-6">
           <p className="text-sm leading-relaxed text-neutral-900">
             I&apos;m a creative technologist exploring how humans interact with
@@ -68,7 +68,7 @@ export default function HomePage() {
           {publications.length === 0 ? (
             <p className="text-neutral-500">No publications yet.</p>
           ) : (
-            <ul className="space-y-16">
+            <ul className="space-y-10 sm:space-y-16">
               {publications.map((p) => {
                 const links = [
                   ...(p.links ?? []),
@@ -77,15 +77,14 @@ export default function HomePage() {
                     : []),
                 ];
                 return (
-                <li key={p.slug} className="flex gap-8">
-                  <div className="relative h-35 w-45
-                   shrink-0 overflow-hidden rounded-md bg-white">
+                <li key={p.slug} className="flex flex-col gap-4 sm:flex-row sm:gap-8">
+                  <div className="relative h-40 w-full shrink-0 overflow-hidden rounded-md bg-white sm:h-35 sm:w-45">
                     {p.image ? (
                       <Image
                         src={withBasePath(p.image)}
                         alt={p.title}
                         fill
-                        sizes="180px"
+                        sizes="(min-width: 640px) 180px, 100vw"
                         className="object-contain"
                         unoptimized
                       />
