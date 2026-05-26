@@ -7,6 +7,7 @@ export type Publication = {
   image?: string;
   links?: { label: string; href: string }[];
   award?: string;
+  video?: string;
 };
 
 export const publications: Publication[] = [
@@ -26,9 +27,9 @@ export const publications: Publication[] = [
       "Juho Kim",
     ],
     image: "/images/publications/plantogether.png",
+    video: "/videos/publications/plantogether.mp4",
     links: [
       { label: "Paper", href: "https://dl.acm.org/doi/full/10.1145/3706598.3714044" },
-      { label: "Video", href: "https://dhkim16.github.io/plan-together/mp4/video.mp4" },
       { label: "Webpage", href: "https://plantogether.kixlab.org/" },
     ],
   },
@@ -40,9 +41,9 @@ export const publications: Publication[] = [
     year: 2024,
     authors: ["Dae Hyun Kim", "Hyungyu Shin", "Shakhnozakhon Yadgarova", "Jinho Son", "Hariharan Subramonyam", "Juho Kim"],
     image: "/images/publications/aineedsplanner.png",
+    video: "/videos/publications/aineedsplanner.mp4",
     links: [
       { label: "Paper", href: "https://dl.acm.org/doi/abs/10.1145/3643834.3661577" },
-      { label: "Video", href: "https://dhkim16.github.io/ai-needs-planner/mp4/preview.mp4" },
     ],
   },
   {

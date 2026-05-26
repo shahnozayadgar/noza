@@ -73,7 +73,15 @@ export default function HomePage() {
                 <li key={p.slug} className="flex gap-8">
                   <div className="relative h-35 w-45
                    shrink-0 overflow-hidden rounded-md bg-white">
-                    {p.image && (
+                    {p.video ? (
+                      <video
+                        src={withBasePath(p.video)}
+                        controls
+                        muted
+                        className="h-full w-full object-contain"
+                        poster={p.image ? withBasePath(p.image) : undefined}
+                      />
+                    ) : p.image ? (
                       <Image
                         src={withBasePath(p.image)}
                         alt={p.title}
@@ -82,7 +90,7 @@ export default function HomePage() {
                         className="object-contain"
                         unoptimized
                       />
-                    )}
+                    ) : null}
                   </div>
                   <div className="min-w-0 flex-1 space-y-2">
                     <p className="text-xs text-neutral-600">
