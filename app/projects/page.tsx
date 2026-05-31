@@ -14,7 +14,7 @@ export default function ProjectsPage() {
       <section className="space-y-8">
         <h1 className="text-3xl font-semibold tracking-tight">Projects</h1>
         {projects.length === 0 ? (
-          <p className="text-neutral-500">No projects yet.</p>
+          <p className="text-neutral-500">Coming soon.</p>
         ) : (
           <ul className="space-y-6">
             {projects.map((p) => (
