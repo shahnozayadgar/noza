@@ -12,7 +12,7 @@ export default function ProjectsPage() {
   return (
     <FadeIn>
       <section className="space-y-8">
-        <h1 className="text-3xl font-semibold tracking-tight">Projects</h1>
+        <h2 className="text-lg font-semibold tracking-tight">Projects</h2>
         {projects.length === 0 ? (
           <p className="text-neutral-500">Coming soon.</p>
         ) : (

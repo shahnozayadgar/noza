@@ -23,12 +23,33 @@ export default async function ProjectPage({ params }: Props) {
   }
 
   return (
-    <article className="space-y-6">
-      <h1 className="text-3xl font-semibold tracking-tight">
+    <article className="space-y-8">
+      <h1 className="text-2xl font-medium tracking-tight text-center">
         {project.title}
       </h1>
 
-      {project.cover && (
+      {(project.role || project.period) && (
+        <div className="grid grid-cols-2 gap-4 text-sm text-center">
+          {project.role && (
+            <div>
+              <span className="text-neutral-500">Role</span>
+              <p >{project.role}</p>
+            </div>
+          )}
+          {project.period && (
+            <div>
+              <span className="text-neutral-500">Period</span>
+              <p>{project.period}</p>
+            </div>
+          )}
+        </div>
+      )}
+
+      <p>{project.summary}</p>
+
+      {project.description && <p>{project.description}</p>}
+
+      {/* {project.cover && (
         <div className="relative aspect-video w-full overflow-hidden rounded-lg border border-neutral-200">
           <Image
             src={project.cover}
@@ -37,9 +58,26 @@ export default async function ProjectPage({ params }: Props) {
             className="object-cover"
           />
         </div>
+      )} */}
+
+      {project.images && project.images.length > 0 && (
+        <div className="space-y-6">
+          {project.images.map((image, index) => (
+            <div
+              key={index}
+              className="relative aspect-video w-full overflow-hidden rounded-lg border border-neutral-200"
+            >
+              <Image
+                src={image}
+                alt={`${project.title} - Image ${index + 1}`}
+                fill
+                className="object-cover"
+              />
+            </div>
+          ))}
+        </div>
       )}
 
-      <p className="text-lg text-neutral-700">{project.summary}</p>
     </article>
   );
 }
