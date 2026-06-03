@@ -28,12 +28,12 @@ export default async function ProjectPage({ params }: Props) {
         {project.title}
       </h1>
 
-      {(project.role || project.period) && (
-        <div className="grid grid-cols-2 gap-4 text-sm text-center">
+      {(project.role || project.period || project.collaborators) && (
+        <div className={`grid gap-4 text-sm text-center ${project.collaborators && project.collaborators.length > 0 ? 'grid-cols-3' : 'grid-cols-2'}`}>
           {project.role && (
             <div>
               <span className="text-neutral-500">Role</span>
-              <p >{project.role}</p>
+              <p>{project.role}</p>
             </div>
           )}
           {project.period && (
@@ -42,12 +42,18 @@ export default async function ProjectPage({ params }: Props) {
               <p>{project.period}</p>
             </div>
           )}
+          {project.collaborators && project.collaborators.length > 0 && (
+            <div>
+              <span className="text-neutral-500">Collaborators</span>
+              <p>{project.collaborators.join(", ")}</p>
+            </div>
+          )}
         </div>
       )}
 
-      <p>{project.summary}</p>
+      <p className="whitespace-pre-line">{project.summary}</p>
 
-      {project.description && <p>{project.description}</p>}
+      {project.myrole && <p>{project.myrole}</p>}
 
       {/* {project.cover && (
         <div className="relative aspect-video w-full overflow-hidden rounded-lg border border-neutral-200">
